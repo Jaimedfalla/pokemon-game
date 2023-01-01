@@ -1,7 +1,7 @@
 <template>
   <h1 v-if="!pokemon">Loading, please wait...</h1>
   <div v-else>
-    <h1>Which pokemo is it?</h1>
+    <h1>Which pokemon is it?</h1>
     <PokemonPicture
       :pokemonId="pokemon.id"
       :showPokemon="showPokemon"
