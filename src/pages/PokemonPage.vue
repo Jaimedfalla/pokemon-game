@@ -11,7 +11,9 @@
       @selection="selectPokemon"
     ></PokemonOptions>
     <template v-if="showAnswer">
-      <h2 class="fade-in">{{ message }}</h2>
+      <h2 class="fade-in" :class="[isCorrect ? 'correct' : 'error']">
+        {{ message }}
+      </h2>
       <button @click="restartGame">Restart Game</button>
     </template>
   </div>
@@ -34,6 +36,7 @@ export default {
       showPokemon: false,
       showAnswer: false,
       message: "",
+      isCorrect: false,
     };
   },
   methods: {
@@ -45,9 +48,10 @@ export default {
     selectPokemon(id) {
       this.showPokemon = true;
       this.showAnswer = true;
-      this.message = `${this.pokemon.id === id ? "Correct" : "Incorrect"} is ${
-        this.pokemon.name
-      }`;
+      this.isCorrect = this.pokemon.id === id;
+      this.message = `${
+        this.isCorrect ? "Correct!!! :D:D:D" : "Incorrect"
+      }, it is ${this.pokemon.name}`;
     },
     async restartGame() {
       this.pokemon = null;
@@ -61,3 +65,13 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.error {
+  color: #d43737;
+}
+
+.correct {
+  color: #86d437;
+}
+</style>

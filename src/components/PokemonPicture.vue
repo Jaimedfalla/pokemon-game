@@ -6,7 +6,7 @@
       class="hidden-pokemon"
       alt="Pókemon"
     />
-    <img v-else :src="imgSrc" alt="Pókemon" />
+    <img v-else :src="imgSrc" alt="Pókemon" class="fade-in" />
   </div>
 </template>
 

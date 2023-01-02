@@ -21,9 +21,6 @@ module.exports = {
         "**/__tests__/*.{j,t}s?(x)",
         "**/tests/unit/**/*.spec.{j,t}s?(x)",
       ],
-      rules: {
-        "no-unused-expressions": "off",
-      },
       env: {
         jest: true,
       },
